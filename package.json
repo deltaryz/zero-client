@@ -9,6 +9,7 @@
   "author": "deltaryz",
   "license": "MIT",
   "dependencies": {
+    "@types/request": "^2.48.4",
     "request": "^2.88.0"
   }
 }

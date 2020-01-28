@@ -7,7 +7,7 @@ let id = process.argv[3];
 // bitch at the user to specify a url
 if (!url) {
   console.log("You must specify a URL!");
-  return 1;
+  process.exit(1);
 }
 
 // if the user does not specify an id, set to 'test'
@@ -28,6 +28,8 @@ let query = {
   }
 };
 
+// test
+
 // create request
 let createRequest = function(options) {
   console.log("Making request with options: ", options);
@@ -36,6 +38,7 @@ let createRequest = function(options) {
       return console.log(err);
     }
     console.log("\nResponse body:\n" + body);
+    return true; // success!
   });
 };
 
