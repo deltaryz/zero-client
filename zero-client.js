@@ -28,8 +28,6 @@ let query = {
   }
 };
 
-// test
-
 // create request
 let createRequest = function(options) {
   console.log("Making request with options: ", options);
