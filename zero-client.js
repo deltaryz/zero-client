@@ -6,9 +6,16 @@ if (!process.argv[2]) {
     return 1;
 }
 
+const options = {
+    url: process.argv[2],
+    qs: {
+    	test: "test"
+    }
+}
+
 // create request
 let createRequest = function() {
-    request(process.argv[2], { json: true }, (err, res, body) => {
+    request(options, (err, res, body) => {
         if (err) { return console.log(err); }
         console.log(body);
     });
