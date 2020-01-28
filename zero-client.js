@@ -30,8 +30,7 @@ let query = {
 
 // create request
 let createRequest = function(options) {
-  console.log("Making request with options:\n");
-  console.log(options);
+  console.log("Making request with options: ", options);
   request(options, (err, res, body) => {
     if (err) {
       return console.log(err);
