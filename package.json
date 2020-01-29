@@ -10,6 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "@types/request": "^2.48.4",
-    "request": "^2.88.0"
+    "@types/shelljs": "^0.8.6",
+    "request": "^2.88.0",
+    "shelljs": "^0.8.3"
   }
 }
