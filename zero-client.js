@@ -32,7 +32,7 @@ let query = {
 // create request
 let createRequest = function(options) {
   console.log("Making request with options: ", options);
-  request(options, (err, res, body) => {
+  request(options, (err, _res, body) => {
     if (err) {
       console.log("Error making request:\n", err);
       process.exit(1); // exit program since the thing failed
