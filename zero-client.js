@@ -21,6 +21,7 @@ if (!url.startsWith("http://")) {
 }
 
 // URL query options
+// TODO: add some more shit!
 let query = {
   url: url,
   qs: {
@@ -33,9 +34,21 @@ let createRequest = function(options) {
   console.log("Making request with options: ", options);
   request(options, (err, res, body) => {
     if (err) {
-      return console.log(err);
+      console.log("Error making request:\n", err);
+      process.exit(1); // exit program since the thing failed
     }
-    console.log("\nResponse body:\n" + body);
+
+    let response = undefined;
+
+    // make sure the response is valid
+    try {
+      response = JSON.parse(body);
+    } catch (err) {
+      console.log("Error parsing response: \n", err);
+      process.exit(1); // exit program since the thing failed
+    }
+
+    console.log("\nResponse body:\n" + response.msg);
     return true; // success!
   });
 };
@@ -45,5 +58,7 @@ createRequest(query);
 
 // loop every 60 sec
 setInterval(function() {
+  // TODO: crunch some data
+
   createRequest(query);
 }, 60000);
